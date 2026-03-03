@@ -1,0 +1,5 @@
+node_modules/
+.env
+.env.*
+dist/
+video-image-gen-486907-1527acc01dbe.json
