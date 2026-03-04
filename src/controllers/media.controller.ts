@@ -217,7 +217,7 @@ export class MediaController {
   }
 
   @Get('getCaptions')
-  async getCaptions(@Query('userId') userId: string, @Query('startDate') startDate: string, @Query('endDate') endDate: string) {
-      return this.projectsService.getCaptions(userId, startDate, endDate);
+  async getCaptions(@Query('clientId') clientId: string, @Query('startDate') startDate: string, @Query('endDate') endDate: string) {
+      return this.projectsService.getCaptions(clientId, startDate, endDate);
   }
 }

@@ -102,9 +102,9 @@ export class ProjectsService {
     return project.toObject();
   }
 
-  async getCaptions(userId: string, startDate?: string, endDate?: string) {
+  async getCaptions(clientId: string, startDate?: string, endDate?: string) {
     let captionData = await this.captionGenModel.find({
-      userId: userId,
+      clientId: clientId,
       ...(startDate && endDate ? {
         createdAt: {
           $gte: new Date(startDate + 'T00:00:00.000+00:00'),
