@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Res, UploadedFile, UseInterceptors, HttpStatus, Req, Get } from '@nestjs/common';
+import { Controller, Post, Body, Res, UploadedFile, UseInterceptors, HttpStatus, Req, Get,Query } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { GeminiService } from '../services/gemini.service';
 import { RefineService } from '../services/refine.service';
@@ -214,5 +214,10 @@ export class MediaController {
     } catch (err) {
       return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({ success: false, error: err.message });
     }
+  }
+
+  @Get('getCaptions')
+  async getCaptions(@Query('userId') userId: string, @Query('startDate') startDate: string, @Query('endDate') endDate: string) {
+      return this.projectsService.getCaptions(userId, startDate, endDate);
   }
 }
