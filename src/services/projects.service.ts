@@ -207,7 +207,7 @@ export class ProjectsService {
 
       return {
         projectId: cap.projectId,
-        userName: 'Unknown User',
+        userName: 'Adverza Media Labs',
         genaratedAt: date,
         mediaUrls: cap.mediaUrls || [],
         basePrompt: cap.basePrompt,
